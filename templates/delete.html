@@ -1,0 +1,66 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- comentario de lo que sea -->
+{% load static from staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="{% static "normalize.css" %}" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static "estilos.css" %}" />
+    <link rel="stylesheet" href="{% static "responsive.css" %}" />
+    </head>
+    <nav>
+        <ul>
+            <li id="flechita_nav"><a href="/"></a></li>
+            
+            <li id="publicar_nav"><a href="">S.G.I</a></li>
+        </ul>
+    </nav>
+    <aside id="bienvenida">
+        {% if not request.user.is_authenticated %}
+        {% else %}
+            Hola {{request.user}}!
+        {% endif %}
+    </aside>
+
+  <section id="contenido">
+        <form method="post">
+        <article class="item">
+        <h4><b>Desea Elimnar eservacion?:
+        &nbsp;&nbsp;{{reserva.usuario.username}}&nbsp;-&nbsp;</b>
+        <b>{{reserva.fecha}}</b>
+        <b>{{reserva.sala.nombre}}</b>
+        <br>
+        <br>
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Si, eliminar</button>
+            <a class="btn btn-default" href="{%  url "test:reser" id_reserva=reserva.id %}">Cancelar</a>
+        </thead>
+        </tr>
+        </table>
+
+        <br>
+        <br>
+        </article>
+        <form>
+        </div>
+    </section>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+    <footer>
+        <p><strong>Powered by Demaro!</strong></p>
+        <p>S.G.I for HRR. 2017 ®</p>
+    </footer>
+
+{% endblock%}

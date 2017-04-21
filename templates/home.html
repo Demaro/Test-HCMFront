@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- comentario de lo que sea -->
+{% load static from staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="{% static "normalize.css" %}" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static "estilos.css" %}" />
+    <link rel="stylesheet" href="{% static "responsive.css" %}" />
+</head>
+    <nav>
+        <ul>
+            <li id="flechita_nav"><a href="/"></a></li>
+            <li><h5><b>SALAS SOLICITADAS:</b></h5></li>
+            <li id="publicar_nav"><a href="{% url "test:reserva"  %}">Reservar</a></li>
+        </ul>
+    </nav>
+    <aside id="bienvenida">
+            Hola {{request.user}}!
+    </aside>
+
+    <section id="contenido">
+        {% if reserva %}
+
+        {% for r in reserva %}
+    <article class="item">
+            <figure class="imagen_item">
+            </figure>
+            <p class="datos_item">
+            <a class="tag_item" href="{# url "usuario:lita_active"  %}">Sala: {{r.sala.nombre}}</a>
+            <br>
+            {% if request.user.is_superuser %}
+            <a href="{% url "test:edit"  id_reserva=r.id %}" type="submit" class="btn btn-primary pull-right" value="editar" "/>Modificar</a>
+            {% endif %}
+            <ul>
+            <li><h5><b>Empleado: {{ r.usuario.username }}</b></h5></li>
+            <li><h5><b>Fecha: {{ r.fecha }}</b></h5></li>
+            {% if request.user.is_superuser %}
+            <a href="{% url "test:confirma"  id_reserva=r.id id_sala=r.sala.id %}" type="submit" class="btn btn-success pull-right" value="editar" "/>Confirmar</a>
+            {% endif %}
+            <li><h5><b>Ubicacion {{ r.sala.ubicacion }}</b></h5></li>
+            <li><h5><b>Capacidad: {{ r.capacidad }}</b></h5></li>
+            <a href="{% url "test:delete"  id_reserva=r.id id_sala=r.sala.id %}" type="submit" class="btn btn-danger pull-right" value="editar" "/>Eliminar</a>
+            <li><h5><b>Inicio: {{ r.hora_inicio }}</b></h5></li>
+            <li><h5><b>Termino: {{ r.hora_termino }}</b></h5></li>
+            <li><h5><b>Estado: {{ r.sala.estado }}</b></h5></li>
+            {% if r.sala.estado == "Reservada" %}
+            <font color="blue"><li><h5><b>Solicitud por confirmar</b></h5></li></font>
+            {% endif %}
+            {% if r.sala.estado == "Confirmada" %}
+            <font color="green"><li><h5><b>Solicitud Confirmada!</b></h5></li></font>
+            {% endif %}
+            </ul>
+           </p>
+
+            </p>   
+            <p class="autor_item">
+
+            
+            </p>                   
+            <a class="guardar_item" href="#"></a>
+
+        </article>
+        {% endfor %}
+        {% else %}
+            NO TIENE SALAS RESERVADAS.
+        {% endif %}
+
+
+    </section>
+    <footer>
+        <p><strong>Powered by Demaro!</strong></p>
+        <p>S.G.I for HRR. 2017 ®</p>
+    </footer>
+
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<!-- comentario de lo que sea -->
+{% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static "bootstrap.css" %}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="{% static "normalize.css" %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static "estilos.css" %}" />
+    <link rel="stylesheet" href="{% static "responsive.css" %}" />
+</head>
+    <nav>
+        <ul>
+            <li id="flechita_nav"><a href="/"></a></li>
+            
+            <li id="publicar_nav"><a href="">Reservar</a></li>
+        </ul>
+    </nav>
+  <center>
+  <section id="contenido">
+        <form method="post">
+        <article class="item">
+        <h4><b>Ingrese reservacion:
+        <table>
+        <thead>
+            <tr> 
+            <td>{% csrf_token %}
+            {{form.as_p}}</td>
+            <b>
+            <br>
+        <br>
+        <br>
+        <td></td>
+        </thead>
+        </tr>
+        </table>
+        <br>
+        <input type="submit" class= "btn btn-primary" value="Enviar">
+        </article>
+        <form>
+        </div>
+    </section>
+    </center>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+    <footer>
+        <p><strong>Powered by Demaro!</strong></p>
+        <p>S.G.I for HRR. 2017 ®</p>
+    </footer>
+
+{% endblock%}

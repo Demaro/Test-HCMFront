@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Reservaciones Login
+{% endblock %}
+{% block navbar%}
+{% endblock %}
+{% block content %}
+<!-- comentario de lo que sea -->
+        <meta name="viewport" 
+          content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Puls3: Comunidad online de gente pro y (no sé que más escribir)</title>
+   {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static "normalize.css" %}" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static "estilos2.css" %}" />
+    <link rel="stylesheet" href="{% static "responsive.css" %}" />
+</head>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="">
+<form method="post">
+    {% csrf_token %}
+     <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input class="form-control" type="text" name="username" required>
+           </div>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="username">Contraseña:</label>
+                <input class="form-control" type="password" name="password" required>
+           </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Ingresar">
+           </div>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}
