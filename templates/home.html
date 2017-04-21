@@ -41,7 +41,9 @@
             {% endif %}
             <li><h5><b>Ubicacion {{ r.sala.ubicacion }}</b></h5></li>
             <li><h5><b>Capacidad: {{ r.capacidad }}</b></h5></li>
+            {% if request.user.is_superuser %}
             <a href="{% url "test:delete"  id_reserva=r.id id_sala=r.sala.id %}" type="submit" class="btn btn-danger pull-right" value="editar" "/>Eliminar</a>
+            {% endif %}
             <li><h5><b>Inicio: {{ r.hora_inicio }}</b></h5></li>
             <li><h5><b>Termino: {{ r.hora_termino }}</b></h5></li>
             <li><h5><b>Estado: {{ r.sala.estado }}</b></h5></li>
