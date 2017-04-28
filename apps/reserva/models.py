@@ -18,6 +18,9 @@ class Insumo(models.Model):
     descripcion = models.CharField(max_length=40, blank=True)
     stock       = models.IntegerField(blank=True)
 
+    def __str__(self):
+        return '{}'.format(self.nombre)
+
 
 class Reservacion(models.Model):
     sala              = models.ForeignKey('Sala', on_delete=models.CASCADE, blank=True, null=True)
