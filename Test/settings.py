@@ -83,10 +83,10 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"), )
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Test',
-        'USER': 'postgres',
-        'PASSWORD': 'demaro',
-        'HOST': 'localhost',
+        'NAME': 'd65jk8uotljj0c',
+        'USER': 'jizkaxsigrvhrj',
+        'PASSWORD': '0f5e89aba8f351f350856e3c45f963e268a533f9551e86d4560eff6508f013cc',
+        'HOST': 'ec2-54-243-107-66.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
