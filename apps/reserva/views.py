@@ -4,6 +4,7 @@ from django.db.models import Count
 from django.http import HttpResponse, HttpResponseRedirect
 
 from .forms import ReservaForm
+from django.db.models import Q
 
 
 #Visualizacion de reservacion selecionada desde calendario:
@@ -31,7 +32,7 @@ def Reserva_view(request):
             res.hora_termino
             reserva = Reservacion.objects.get(id=res.id)
             try:
-                sala = Sala.objects.filter(capacidad=res.capacidad).filter(estado="Disponible" or "Reservada").filter(horario_disp__range=(res.hora_inicio, res.hora_termino)).values_list('id', flat=True)[0]
+                sala = Sala.objects.filter(capacidad=res.capacidad).filter(Q(estado="Disponible") | Q(estado="Reservada")).filter(horario_disp__range=(res.hora_inicio, res.hora_termino)).values_list('id', flat=True)[0]
             except IndexError:
                 return render(request, 'notrange.html')
 
