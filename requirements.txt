@@ -1,6 +1,7 @@
 Django==1.11
 django-annoying==0.10.3
 django-datetime-widget==0.9.3
+gunicorn==19.7.1
 icalendar==3.11.3
 psycopg2==2.6.2
 python-dateutil==2.6.0
