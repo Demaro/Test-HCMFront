@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.reserva.models import Reservacion, Sala
+from .models import Reservacion, Sala
 from django.db.models import Count
 from django.http import HttpResponse, HttpResponseRedirect
 

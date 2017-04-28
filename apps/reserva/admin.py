@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.reserva.models import Reservacion, Sala
+from .models import Reservacion, Sala
 
 
 
