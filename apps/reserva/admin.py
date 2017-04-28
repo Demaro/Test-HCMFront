@@ -10,10 +10,10 @@ class ReservacionAdmin(admin.ModelAdmin):
     list_editable = ('fecha','hora_inicio', 'hora_termino', 'capacidad', 'insumos', 'sala',)
 
 class SalaAdmin(admin.ModelAdmin):
-	list_display = ('id', 'nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad',)
-	list_filter   = ('nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad', )
+	list_display = ('id', 'nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad', 'insumos',)
+	list_filter   = ('nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad', 'insumos', )
 	search_fields = ( 'capacidad__cantidad',)
-	list_editable = ('nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad',)
+	list_editable = ('nombre', 'ubicacion', 'horario_disp', 'estado', 'capacidad', 'insumos', )
 
 class InsumoAdmin(admin.ModelAdmin):
 	list_display = ('id', 'nombre', 'descripcion', 'stock',)
