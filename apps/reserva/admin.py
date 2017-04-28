@@ -30,7 +30,11 @@ class Cant_insumosAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Reservacion, ReservacionAdmin)
-admin.site.register(Cant_personas, Cant_personasAdmin)
-admin.site.register(Insumo, InsumoAdmin)
 admin.site.register(Sala, SalaAdmin)
+admin.site.register(Insumo, InsumoAdmin)
+
+admin.site.register(Cant_personas, Cant_personasAdmin)
+admin.site.register(Cant_insumos, Cant_insumosAdmin)
+
+
 
