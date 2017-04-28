@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Reservacion, Sala
 from django.db.models import Count
 from django.http import HttpResponse, HttpResponseRedirect
-from .import forms
 
-from reserva.forms import ReservaForm
+from .forms import ReservaForm
 
 
 #Visualizacion de reservacion selecionada desde calendario:
