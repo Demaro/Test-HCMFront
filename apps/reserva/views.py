@@ -3,7 +3,7 @@ from .models import Reservacion, Sala
 from django.db.models import Count
 from django.http import HttpResponse, HttpResponseRedirect
 
-from apps.reserva.forms import ReservaForm
+from reserva.forms import ReservaForm
 
 
 #Visualizacion de reservacion selecionada desde calendario:
