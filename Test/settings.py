@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e@^%8omp7&8(nc-4hrc$holufabn$3buo5qev2_hpg21*a)5=8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,7 +74,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Test.wsgi.application'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
-#STATICFILES_STORAGE ='django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+STATICFILES_STORAGE ='django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( 
 
