@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls import url
 
-from apps.reserva.views import Reserva, Reserva_view, Solicita, event, Edit_reserva, Confirma, DeleteReserva
+from reserva.views import Reserva, Reserva_view, Solicita, event, Edit_reserva, Confirma, DeleteReserva
 
 urlpatterns = [
 
